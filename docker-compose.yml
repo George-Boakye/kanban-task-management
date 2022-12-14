@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+    container_name: kanban_app
+    restart: unless-stopped
+    working_dir: /usr/src/app
+    environment:
+      NUXT_HOST: "0.0.0.0"
+      NUXT_PORT: "3000"
+    volumes:
+      - ./:/usr/src/app
+    expose:
+      - "3000"
+      - "24678"
+    ports:
+      - "3000:3000"
+      - "24678:24678"
