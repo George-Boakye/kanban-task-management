@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --color-primary: #635FC7;
+        --color-secondary: 99, 95, 199;
+        --color-danger: #EA5555;
+    }
+}
+
+body {
+    @apply bg-gray-light font-bold leading-4
+}
+
+
+input {
+    @apply body-lg
+}
+
+.body-lg {
+    @apply font-medium text-sm leading-6
+}
+
+.body-md {
+    @apply font-bold text-xs leading-4
+}
+
+.heading-xl {
+    @apply font-bold text-2xl leading-8
+}
+
+.heading-lg {
+    @apply font-bold text-lg leading-6
+}
+
+.heading-md {
+    @apply font-bold text-base leading-5
+}
+
+.heading-sm {
+    @apply font-bold text-xs leading-4 tracking-widest
+}
+
+.btn {
+    @apply font-bold py-4 px-7 rounded-3xl border text-center inline-flex items-center;
+}
+
+.btn-primary {
+    @apply bg-purple border-purple text-white
+}
+
+.btn-primary:hover {
+    @apply bg-purple-light border-purple-light text-white
+}
+
+.btn-secondary {
+    @apply bg-purple/10 border-purple/10 text-purple
+}
+
+.btn-secondary:hover {
+    @apply bg-purple/25 border-purple/25 text-purple
+}
+
+.btn-danger {
+    @apply bg-red border-red text-white
+}
+
+.btn-danger:hover {
+    @apply bg-red-light border-red-light text-white
+}
+
+.checkbox {
+    @apply bg-gray-light border-gray-light py-3 px-2 border mb-3 border-gray-light rounded text-black
+}
+
+.checkbox:hover {
+    @apply bg-purple/25 border-purple/25
+}
+
+.checkbox-input:checked {
+    @apply accent-purple
+}
+
+.checkbox-label {
+    @apply text-xs ml-2
+}
+
+.checkbox-input:checked+.checkbox-label.strikethrough {
+    @apply line-through text-black/50
+}
+
+.checkbox-input:disabled+.checkbox-label.strikethrough {
+    @apply text-black/50
+}
+
+.checkbox-input:indeterminate+.checkbox-label.strikethrough {
+    @apply text-black/50
+}
+
+.input-text {
+    @apply rounded px-3 py-3 bg-white border border-gray/25 text-black outline-none
+}
+
+.input-text:focus,
+.input-text:active {
+    @apply border-purple/50
+}
+
+

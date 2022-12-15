@@ -43,18 +43,18 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 ## Run With Docker
 
-Build docker image:
+1. Install both [docker](https://docs.docker.com/get-docker/) and [docker compose](https://docs.docker.com/compose/install/)
 
-```docker build -t kanban-task-management .```
+2. Build docker image:
 
-You can choose any name to tag the image.
+    ```docker compose build```
 
-Run the container:
+3. Run the container:
 
-```docker run -it -p 3000:3000 kanban-task-management```
+    ```docker compose up```
 
-Stop the container:
+    You can also run the container in the background by adding the `-d` flag
 
-1. Run ```docker ps``` to get the list of running containers
-2. Get the container id attached to *kanban-task-management* image
-3. Run ```docker stop {container id}```
+4. To stop the container:
+
+    ```docker compose stop```
