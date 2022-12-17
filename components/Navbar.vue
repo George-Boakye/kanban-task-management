@@ -1,5 +1,5 @@
 <template>
-	<header class="relative flex items-center justify-start bg-white">
+	<header class="relative flex items-center justify-start bg-white border-b border-b-light">
 		<nav class="flex flex-nowrap w-full items-center justify-between">
 			<a
 				class="ml-10 mr-9 pr-8 p-0 border border-y-0 border-l-0 border-r-light py-10"
