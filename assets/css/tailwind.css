@@ -74,7 +74,7 @@ input {
 }
 
 .checkbox {
-    @apply bg-gray-light border-gray-light py-3 px-2 border mb-3 border-gray-light rounded text-black
+    @apply bg-gray-light py-3 px-2 border mb-3 border-gray-light rounded text-black
 }
 
 .checkbox:hover {
@@ -111,7 +111,7 @@ input {
 }
 
 .sidebar {
-    @apply w-[19rem] mr-[19rem] flex fixed top-0 bottom-0 flex-col flex-shrink-0 text-gray bg-white
+    @apply w-[19rem] mr-[19rem] flex fixed top-0 bottom-0 flex-col flex-shrink-0 text-gray bg-white border-r border-r-light
 }
 
 
