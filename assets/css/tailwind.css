@@ -110,4 +110,37 @@ input {
     @apply border-purple/50
 }
 
+.sidebar {
+    @apply w-[19rem] mr-[19rem] flex fixed top-0 bottom-0 flex-col flex-shrink-0 text-gray bg-white
+}
 
+
+.sidebar-list {
+    @apply flex flex-col flex-wrap list-none mb-auto
+}
+
+.sidebar-item {
+    @apply heading-md my-1
+}
+
+.sidebar-link {
+    @apply flex items-center relative left-0 px-8 py-3.5 mr-4
+}
+
+.sidebar-link:active,
+.sidebar-link:focus {
+    @apply bg-purple rounded-r-3xl text-white
+}
+
+
+svg {
+    @apply mr-3
+}
+
+.svg-mr-0 svg {
+    @apply mr-0
+}
+
+.theme-toggle {
+    @apply inline-flex relative items-center cursor-pointer mx-6
+}
