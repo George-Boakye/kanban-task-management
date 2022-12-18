@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-const showSidebar = ref(false)
+const showSidebar = ref(true)
 
 const toggleSidebar = () => {
 	showSidebar.value = !showSidebar.value
