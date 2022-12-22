@@ -1,5 +1,5 @@
 <template>
-	<button class="btn" :class="btnClass">
+	<button class="btn" :class="btnClass" @click="$emit('perform-action')">
 		<template v-if="isLoading">
 			<svg
 				aria-hidden="true"
@@ -23,6 +23,8 @@
 </template>
 
 <script setup>
+const emit = defineEmits(['perform-action'])
+
 defineProps({
 	label: {
 		type: String,
