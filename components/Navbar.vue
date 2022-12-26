@@ -8,7 +8,7 @@
 			</a>
 			<div class="flex items-center flex-grow">
 				<span class="heading-xl" :class="{ 'ml-[81px]': showSidebar }"
-					>Platform Launch</span
+					>{{route.params.id}}</span
 				>
 				<button class="btn btn-primary ml-auto">
 					<SvgComponent name="icon-add-task-mobile" />
@@ -23,9 +23,15 @@
 </template>
 
 <script setup lang="ts">
+
 defineProps({
 	showSidebar: Boolean,
 })
+
+const route = useRoute();
+console.log(route)
+
+
 </script>
 
 <style scoped></style>
