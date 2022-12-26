@@ -16,7 +16,7 @@
 			</svg>
 			{{ loadingLabel }}
 		</template>
-		<template v-else>
+		<template  v-else>
 			{{ label }}
 		</template>
 	</button>
@@ -44,8 +44,10 @@ defineProps({
 		type: String,
 		required: false,
 	},
-})
+});
 </script>
 
-<style></style>
+<style scoped>
+
+</style>
 

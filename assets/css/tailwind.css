@@ -5,142 +5,139 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --color-primary: #635FC7;
-        --color-secondary: 99, 95, 199;
-        --color-danger: #EA5555;
-    }
+	:root {
+		--color-primary: #635fc7;
+		--color-secondary: 99, 95, 199;
+		--color-danger: #ea5555;
+	}
+
+	input {
+		@apply body-lg border rounded h-[40px]  pt-[8px] pb-[8px] pl-[16px];
+	}
 }
 
 body {
-    @apply bg-gray-light font-bold leading-4 text-gray dark:bg-black-dark
-}
-
-
-input {
-    @apply body-lg
+	@apply bg-gray-light font-bold leading-4 text-gray dark:bg-black-dark;
 }
 
 .body-lg {
-    @apply font-medium text-sm leading-6
+	@apply font-medium text-sm leading-6;
 }
 
 .body-md {
-    @apply font-bold text-xs leading-4
+	@apply font-bold text-xs leading-4;
 }
 
 .heading-xl {
-    @apply font-bold text-2xl leading-8
+	@apply font-bold text-2xl leading-8;
 }
 
 .heading-lg {
-    @apply font-bold text-lg leading-6
+	@apply font-bold text-lg leading-6;
 }
 
 .heading-md {
-    @apply font-bold text-base leading-5
+	@apply font-bold text-base leading-5;
 }
 
 .heading-sm {
-    @apply font-bold text-xs leading-4 tracking-widest
+	@apply font-bold text-xs leading-4 tracking-widest;
 }
 
 .btn {
-    @apply font-bold py-4 px-7 rounded-3xl border text-center inline-flex items-center dark:text-white
+	@apply font-bold py-4 px-7 rounded-3xl  text-center inline-flex items-center dark:text-white ;
 }
 
 .btn-primary {
-    @apply bg-purple border-purple text-white
+	@apply bg-purple border-purple text-white;
 }
 
 .btn-primary:hover {
-    @apply bg-purple-light border-purple-light text-white
+	@apply bg-purple-light border-purple-light text-white;
 }
 
 .btn-secondary {
-    @apply bg-purple/10 border-purple/10 text-purple
+	@apply bg-purple/10 border-purple/10 text-purple;
 }
 
 .btn-secondary:hover {
-    @apply bg-purple/25 border-purple/25 text-purple
+	@apply bg-purple/25 border-purple/25 text-purple;
 }
 
 .btn-danger {
-    @apply bg-red border-red text-white
+	@apply bg-red border-red text-white;
 }
 
 .btn-danger:hover {
-    @apply bg-red-light border-red-light text-white
+	@apply bg-red-light border-red-light text-white;
 }
 
 .checkbox {
-    @apply bg-gray-light py-3 px-2 border mb-3 border-gray-light rounded text-black
+	@apply bg-gray-light py-3 px-2 border mb-3 border-gray-light rounded text-black;
 }
 
 .checkbox:hover {
-    @apply bg-purple/25 border-purple/25
+	@apply bg-purple/25 border-purple/25;
 }
 
 .checkbox-input:checked {
-    @apply accent-purple
+	@apply accent-purple;
 }
 
 .checkbox-label {
-    @apply text-xs ml-2
+	@apply text-xs ml-2;
 }
 
-.checkbox-input:checked+.checkbox-label.strikethrough {
-    @apply line-through text-black/50
+.checkbox-input:checked + .checkbox-label.strikethrough {
+	@apply line-through text-black/50;
 }
 
-.checkbox-input:disabled+.checkbox-label.strikethrough {
-    @apply text-black/50
+.checkbox-input:disabled + .checkbox-label.strikethrough {
+	@apply text-black/50;
 }
 
-.checkbox-input:indeterminate+.checkbox-label.strikethrough {
-    @apply text-black/50
+.checkbox-input:indeterminate + .checkbox-label.strikethrough {
+	@apply text-black/50;
 }
 
 .input-text {
-    @apply rounded px-3 py-3 bg-white border border-gray/25 text-black outline-none
+	@apply rounded px-3 py-3 bg-white border border-gray/25 text-black outline-none;
 }
 
 .input-text:focus,
 .input-text:active {
-    @apply border-purple/50
+	@apply border-purple/50;
 }
 
 .sidebar {
-    @apply w-[19rem] mr-[19rem] flex fixed top-0 bottom-0 flex-col flex-shrink-0 text-gray bg-white border-r border-r-light dark:bg-gray-dark dark:border-dark
+	@apply w-[19rem] mr-[19rem] flex fixed top-0 bottom-0 flex-col flex-shrink-0 text-gray bg-white border-r border-r-light dark:bg-gray-dark dark:border-dark;
 }
 
-
 .sidebar-list {
-    @apply flex flex-col flex-wrap list-none mb-auto
+	@apply flex flex-col flex-wrap list-none mb-auto;
 }
 
 .sidebar-item {
-    @apply heading-md my-1
+	@apply heading-md my-1;
 }
 
 .sidebar-link {
-    @apply flex items-center relative left-0 px-8 py-3.5 mr-4
+	@apply flex items-center relative left-0 px-8 py-3.5 mr-4;
 }
 
 .sidebar-link:active,
 .sidebar-link:focus {
-    @apply bg-purple rounded-r-3xl text-white
+	@apply bg-purple rounded-r-3xl text-white;
 }
 
-
 svg {
-    @apply mr-3
+	@apply mr-3;
 }
 
 .svg-mr-0 svg {
-    @apply mr-0
+	@apply mr-0;
 }
 
 .theme-toggle {
-    @apply inline-flex relative items-center cursor-pointer mx-6
+	@apply inline-flex relative items-center cursor-pointer mx-6;
 }

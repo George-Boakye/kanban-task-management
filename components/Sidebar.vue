@@ -6,31 +6,19 @@
 			</a>
 
 			<div class="py-3 overflow-auto">
-				<h5 class="heading-sm mb-3 uppercase px-8">ALL BOARDS (3)</h5>
+				<h5 class="heading-sm mb-3 uppercase px-8">ALL BOARDS ({{data.boards.length}})</h5>
 				<ul class="sidebar-list">
-					<li class="sidebar-item">
-						<NuxtLink active to="#" class="sidebar-link">
+					<li class="sidebar-item" v-for="board in data.boards" :key="board.name">
+						<NuxtLink active :to="`/boards/${string_to_slug(board.name)}`" class="sidebar-link">
 							<SvgComponent name="icon-board" />
-							Platform Launch</NuxtLink
+							{{board.name}}</NuxtLink
 						>
 					</li>
 					<li class="sidebar-item">
-						<NuxtLink to="#" class="sidebar-link">
-							<SvgComponent name="icon-board" />
-							Marketing Plan</NuxtLink
-						>
-					</li>
-					<li class="sidebar-item">
-						<NuxtLink to="#" class="sidebar-link">
-							<SvgComponent name="icon-board" />
-							Roadmap</NuxtLink
-						>
-					</li>
-					<li class="sidebar-item">
-						<NuxtLink href="#" class="sidebar-link text-purple items-center">
+						<button class="sidebar-link text-purple items-center" @click.prevent="$emit('open-board-modal')">
 							<SvgComponent name="icon-add-task-mobile" class="text-currentColor" />
 							Create New Board
-						</NuxtLink>
+						</button>
 					</li>
 				</ul>
 			</div>
@@ -69,14 +57,15 @@
 </template>
 
 <script setup lang="ts">
+import data from '../data.json';
+
 defineProps({
-	showSidebar: Boolean,
+	showSidebar: Boolean
 })
 
-const theme = ref('light')
+const theme = ref('light');
 
 const toggleTheme = () => {
-	console.log('changing theme')
 
 	if (theme.value !== 'dark') {
 		theme.value = 'dark'
@@ -85,5 +74,23 @@ const toggleTheme = () => {
 
 	theme.value = 'light'
 	return document.documentElement.classList.remove('dark')
+}
+
+function string_to_slug (str) {
+    str = str.replace(/^\s+|\s+$/g, ''); // trim
+    str = str.toLowerCase();
+  
+    // remove accents, swap ñ for n, etc
+    let from = "àáäâèéëêìíïîòóöôùúüûñç·/_,:;";
+    let to   = "aaaaeeeeiiiioooouuuunc------";
+    for (let i=0, l=from.length ; i<l ; i++) {
+        str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+    }
+
+    str = str.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+        .replace(/\s+/g, '-') // collapse whitespace and replace by -
+        .replace(/-+/g, '-'); // collapse dashes
+
+    return str;
 }
 </script>
