@@ -13,7 +13,7 @@
             <div class="w-[416px] mb-[12px] flex items-center justify-between" v-for="(column, index) in columns"
                 :key="index">
                 <input class="w-[385px]" type="text" :class="column" v-model="columns[index].name" />
-                <figure @click="removeColumn(index)"><img src="@/assets/images/icon-cross.svg" alt="" /></figure>
+                <SvgComponent class="svg-mr-0" name="icon-cross" @click="removeColumn(index)"/>
             </div>
             <ButtonComponent label="Add New Column" btn-class="block w-[416px] mb-[24px] btn-secondary"
                 @click="addColumn" /><br />
