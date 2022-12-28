@@ -17,12 +17,10 @@
 export default {
     methods:{
         handleBackdropClick(e){
-                console.log(this.$refs)
-                if (e.target.className == "modal-backdrop") {
-                    this.$emit('close-modal', false)
-                }
-                    
-            }
+			if (e.target.className == "modal-backdrop") {
+				this.$emit('close-modal', false)
+			}
+		}
     }
 }
 </script>
