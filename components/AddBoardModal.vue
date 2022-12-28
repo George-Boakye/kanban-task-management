@@ -16,7 +16,7 @@
             </div>
             <ButtonComponent label="Add New Column" btn-class="!block w-[416px] mb-[24px] btn-secondary"
                 @click="addColumn" /><br />
-            <ButtonComponent label="Create New Board" btn-class="w-[416px] btn-primary" @click="createNewBoard" />
+            <ButtonComponent label="Create New Board" btn-class="!block w-[416px] btn-primary" @click="createNewBoard" />
         </template>
     </modal>
 </template>
