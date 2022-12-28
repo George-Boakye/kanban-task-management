@@ -5,7 +5,7 @@
         </template>
 
         <template v-slot:body>
-            <form @submit="createNewBoard">
+            <form @submit.prevent="createNewBoard">
                 <label class="block mb-[8px] text-xs" for="name">Name</label>
                 <input 
                     v-model="board.name" 
