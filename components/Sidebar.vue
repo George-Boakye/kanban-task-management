@@ -6,12 +6,12 @@
 			</a>
 
 			<div class="py-3 overflow-auto">
-				<h5 class="heading-sm mb-3 uppercase px-8">ALL BOARDS ({{ data.boards.length }})</h5>
+				<h5 class="heading-sm mb-3 uppercase px-8">ALL BOARDS ({{ boards.length }})</h5>
 				<ul class="sidebar-list">
-					<li class="sidebar-item" v-for="board in data.boards" :key="board.name">
+					<li class="sidebar-item" v-for="board in boards" :key="board.name">
 						<NuxtLink active :to="`/boards/${slug(board.name)}`" class="sidebar-link">
 							<SvgComponent name="icon-board" />
-							{{ board.name }}
+							{{ title(board.name) }}
 						</NuxtLink>
 					</li>
 					<li class="sidebar-item">
@@ -57,13 +57,15 @@
 </template>
 
 <script setup lang="ts">
-import data from '../data.json';
+const boards = useBoard();
 
 defineProps({
 	showSidebar: Boolean
 })
 
 const theme = ref('light');
+
+
 
 const toggleTheme = () => {
 
