@@ -14,7 +14,7 @@
                 <input class="w-[385px] column" type="text" v-model="column.name" />
                 <SvgComponent class="svg-mr-0" name="icon-cross" @click="removeColumn(index)"/>
             </div>
-            <ButtonComponent label="Add New Column" btn-class="block w-[416px] mb-[24px] btn-secondary"
+            <ButtonComponent label="Add New Column" btn-class="!block w-[416px] mb-[24px] btn-secondary"
                 @click="addColumn" /><br />
             <ButtonComponent label="Create New Board" btn-class="w-[416px] btn-primary" @click="createNewBoard" />
         </template>
