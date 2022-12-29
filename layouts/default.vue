@@ -1,25 +1,23 @@
 <template>
-	<AddBoardModal v-show="openModal" @close-modal="(value) => openModal = value"/>
+	<AddBoardModal v-show="openModal" @close-modal="(value) => (openModal = value)" />
 	<div>
-		<Navbar :show-sidebar="showSidebar" @toggle-sidebar="toggleSidebar" />
-		<Sidebar :show-sidebar="showSidebar" @toggle-sidebar="toggleSidebar"  @open-board-modal="toggleModal"/>
-
-		<div :class="{ 'ml-[19rem]': showSidebar }">
+		<Navbar @toggle-sidebar="toggleSidebar" />
+		<div>
+			<Sidebar @toggle-sidebar="toggleSidebar" @open-board-modal="toggleModal" />
 			<slot />
 		</div>
 	</div>
 </template>
 
-<script setup lang="ts">
-const showSidebar = ref(true)
-const openModal = ref(false);
+<script setup>
+const openModal = ref(false)
 
 const toggleModal = () => {
-	 openModal.value = true
+	openModal.value = true
 }
 
 const toggleSidebar = () => {
+	const showSidebar = useSidebar()
 	showSidebar.value = !showSidebar.value
-	console.log(showSidebar)
 }
 </script>
