@@ -41,7 +41,7 @@ const route = useRoute()
 const showEditModal = ref(false)
 
 const boardColumns = computed(() => {
-	return boards.value.find((_b) => _b.name === title(route.params.id))?.columns
+	return boards.value.find((_b) => title(_b.name) === title(route.params.id))?.columns
 })
 
 const completedSubtasks = (subtasks) => {
