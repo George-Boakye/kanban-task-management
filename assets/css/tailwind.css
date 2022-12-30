@@ -110,7 +110,7 @@ body {
 }
 
 .sidebar {
-	@apply w-[19rem] mr-[19rem] flex fixed top-0 bottom-0 flex-col flex-shrink-0 text-gray bg-white border-r border-r-light dark:bg-gray-dark dark:border-dark z-50;
+	@apply w-[19rem] mr-[19rem] flex fixed top-0 bottom-0 flex-col flex-shrink-0 text-gray bg-white border-r border-r-light dark:bg-gray-dark dark:border-dark z-10;
 }
 
 .sidebar-list {
@@ -155,7 +155,7 @@ svg {
 }
 
 .column-title {
-	@apply heading-sm flex items-center;
+	@apply heading-sm flex items-center uppercase;
 }
 
 .column-task {
