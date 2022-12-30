@@ -18,11 +18,8 @@
 	</header>
 </template>
 
-<script setup lang="ts">
-defineProps({
-	showSidebar: Boolean,
-})
-
+<script setup>
+const showSidebar = useSidebar();
 const route = useRoute()
 </script>
 

@@ -47,7 +47,7 @@
 		</aside>
 		<div v-show="!showSidebar">
 			<a
-				class="absolute bottom-8 bg-purple p-6 rounded-r-full"
+				class="absolute bottom-8 bg-purple p-6 rounded-r-full z-50"
 				href="#"
 				@click.prevent="$emit('toggle-sidebar')">
 				<SvgComponent name="icon-show-sidebar" />
@@ -56,16 +56,11 @@
 	</div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const boards = useBoard();
-
-defineProps({
-	showSidebar: Boolean
-})
+const showSidebar = useSidebar();
 
 const theme = ref('light');
-
-
 
 const toggleTheme = () => {
 

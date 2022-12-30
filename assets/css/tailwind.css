@@ -110,7 +110,7 @@ body {
 }
 
 .sidebar {
-	@apply w-[19rem] mr-[19rem] flex fixed top-0 bottom-0 flex-col flex-shrink-0 text-gray bg-white border-r border-r-light dark:bg-gray-dark dark:border-dark;
+	@apply w-[19rem] mr-[19rem] flex fixed top-0 bottom-0 flex-col flex-shrink-0 text-gray bg-white border-r border-r-light dark:bg-gray-dark dark:border-dark z-10;
 }
 
 .sidebar-list {
@@ -140,4 +140,36 @@ svg {
 
 .theme-toggle {
 	@apply inline-flex relative items-center cursor-pointer mx-6;
+}
+
+.board {
+	@apply absolute w-full h-5/6 p-7 whitespace-nowrap;
+}
+
+.board-canvas {
+	@apply w-full h-full overflow-x-scroll pb-8;
+}
+
+.column {
+	@apply w-[300px] h-full p-[10px] inline-block mr-6 overflow-y-auto;
+}
+
+.column-title {
+	@apply heading-sm flex items-center uppercase;
+}
+
+.column-task {
+	@apply bg-white whitespace-normal px-4 py-6 my-5 rounded-lg shadow-sm;
+}
+
+.task-title {
+	@apply heading-md text-black mb-2;
+}
+
+.subtask {
+	@apply body-md;
+}
+
+.column-circle {
+	@apply inline-block h-[15px] w-[15px] rounded-full
 }
