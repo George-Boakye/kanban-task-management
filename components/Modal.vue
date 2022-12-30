@@ -1,5 +1,5 @@
 <template>
-    <div class="modal-backdrop" @click="handleBackdropClick">
+    <div id="modal-backdrop" class="modal-backdrop" @click="handleBackdropClick">
       <div class="modal bg-white max-w-max rounded-md p-8" >
         <slot name="header">
         </slot>
@@ -13,21 +13,19 @@
     </div>
   </template>
 
-<script >
-export default {
-    methods:{
-        handleBackdropClick(e){
-			if (e.target.className == "modal-backdrop") {
-				this.$emit('close-modal', false)
-			}
-		}
+<script setup>
+const emit = defineEmits(['close-modal'])
+
+const handleBackdropClick = (event) => {
+    if (event.target.id == "modal-backdrop") {
+      emit('close-modal', false)
     }
 }
 </script>
 
 <style scoped>
  .modal-backdrop {
-    z-index: 1;
+    z-index: 99;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -39,8 +37,9 @@ export default {
     justify-content: center;
     align-items: center;
   }
+
   .modal{
     position: absolute;
-    z-index: 4;
+    z-index: 100;
   }
 </style>
