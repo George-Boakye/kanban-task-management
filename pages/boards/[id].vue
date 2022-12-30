@@ -21,14 +21,24 @@
 					</div>
 				</div>
 			</div>
+			<div class="column heading-xl bg-gradient-to-r from-[#E9EFFA] to-[rgba(233, 239, 250, 0.5)]/ rounded-lg">
+				<div class="flex justify-center items-center h-full">
+					<button class="flex items-center" @click.prevent="showEditModal = true">
+						<SvgComponent name="icon-add-task-mobile" /> New Column
+						</button>
+				</div>
+			</div>
 		</div>
+		<EditBoardModal v-show="showEditModal" @close-modal="showEditModal = false" />
 	</div>
 </template>
+
 
 <script setup>
 const boards = useBoard()
 const showSidebar = useSidebar()
 const route = useRoute()
+const showEditModal = ref(false)
 
 const boardColumns = computed(() => {
 	return boards.value.find((_b) => _b.name === title(route.params.id))?.columns
