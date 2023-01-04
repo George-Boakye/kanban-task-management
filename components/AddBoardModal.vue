@@ -1,26 +1,25 @@
 <template>
     <modal>
         <template v-slot:header>
-            <h1 class="text-lg mb-[24px] text-black">Add New Board</h1>
+            <h1 class="text-lg mb-[24px] text-black dark:text-white">Add New Board</h1>
         </template>
 
         <template v-slot:body>
             <form @submit.prevent="createNewBoard">
-                <label class="block mb-[8px] text-xs" for="name">Name</label>
+                <label class="block mb-[8px] text-xs dark:text-white" for="name">Name</label>
                 <input 
                     v-model="board.name" 
-                    class="w-[416px] h-[40px] border-[rgba(130, 143, 163, 0.25)]" 
+                    class="w-[416px] h-[40px] border-[rgba(130, 143, 163, 0.25)] dark:bg-black-dark" 
                     type="text"
                     placeholder="e.g. Web Design" 
                     required />
-
-                <label class="block mb-[8px] mt-[24px] text-xs" for="columns">Columns</label>
+                <label class="block mb-[8px] mt-[24px] text-xs dark:text-white" for="columns">Columns</label>
                 <div class="w-[416px] mb-[12px] flex items-center justify-between" v-for="(column, index) in board.columns"
                     :key="index">
-                    <input class="w-[385px] column" type="text" v-model="column.name" required/>
+                    <input class="w-[385px] column dark:bg-black-dark" type="text" v-model="column.name" required/>
                     <SvgComponent class="svg-mr-0" name="icon-cross" @click="removeColumn(index)"/>
                 </div>
-                <ButtonComponent label="Add New Column" type="button" btn-class="!block w-[416px] mb-[24px] btn-secondary"
+                <ButtonComponent class="dark:bg-white dark:text-purple" v-if="board.columns.length <= 4" label="Add New Column" type="button" btn-class="!block w-[416px] mb-[24px] btn-secondary"
                     @click="addColumn" />
                 <ButtonComponent label="Create New Board" type="submit" btn-class="!block w-[416px] btn-primary" />
             </form>

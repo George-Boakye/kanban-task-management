@@ -1,6 +1,6 @@
 <template>
     <div id="modal-backdrop" class="modal-backdrop" @click="handleBackdropClick">
-      <div class="modal bg-white max-w-max rounded-md p-8" >
+      <div class="modal bg-white max-w-max rounded-md p-8 dark:bg-black-dark" >
         <slot name="header">
         </slot>
   
