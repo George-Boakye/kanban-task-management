@@ -43,7 +43,7 @@ const emit = defineEmits(['close-modal'])
 const boards = useBoard()
 const route = useRoute()
 
-const activeBoard = boards.value.find((_b) => _b.name === title(route.params.id))
+const activeBoard = boards.value.find((_b) => title(_b.name) === title(route.params.id))
 
 const board = ref({ name: null, columns: [], ...activeBoard })
 

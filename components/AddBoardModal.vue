@@ -33,6 +33,7 @@ export default {
     data() {
         const columnTemplate = {
             name: null,
+            tasks: [],
         }
 
         return {
@@ -64,7 +65,7 @@ export default {
 
                 this.board = {
                     name: null,
-                    columns: []
+                    columns: [{...this.columnTemplate}]
                 }
 
                 this.$router.push('/boards/' + nextRoute)

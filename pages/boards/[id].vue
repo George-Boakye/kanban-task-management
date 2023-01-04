@@ -21,7 +21,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="column heading-xl bg-gradient-to-r from-[#E9EFFA] to-[rgba(233, 239, 250, 0.5)]/ rounded-lg">
+			<div class="column heading-xl bg-gradient-to-r from-[#E9EFFA] to-[rgba(233, 239, 250, 0.5)] dark:from-[#2B2C37]/30 dark:to-[#2B2C37]/10 rounded-lg">
 				<div class="flex justify-center items-center h-full">
 					<button class="flex items-center" @click.prevent="showEditModal = true">
 						<SvgComponent name="icon-add-task-mobile" /> New Column
@@ -41,7 +41,7 @@ const route = useRoute()
 const showEditModal = ref(false)
 
 const boardColumns = computed(() => {
-	return boards.value.find((_b) => _b.name === title(route.params.id))?.columns
+	return boards.value.find((_b) => title(_b.name) === title(route.params.id))?.columns
 })
 
 const completedSubtasks = (subtasks) => {

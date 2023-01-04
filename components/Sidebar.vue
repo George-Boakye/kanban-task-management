@@ -9,7 +9,7 @@
 				<h5 class="heading-sm mb-3 uppercase px-8">ALL BOARDS ({{ boards.length }})</h5>
 				<ul class="sidebar-list">
 					<li class="sidebar-item" v-for="board in boards" :key="board.name">
-						<NuxtLink active :to="`/boards/${slug(board.name)}`" class="sidebar-link">
+						<NuxtLink :to="`/boards/${slug(board.name)}`" class="sidebar-link" active-class="nuxt-link-active">
 							<SvgComponent name="icon-board" />
 							{{ title(board.name) }}
 						</NuxtLink>
@@ -73,3 +73,9 @@ const toggleTheme = () => {
 	return document.documentElement.classList.remove('dark')
 }
 </script>
+
+<style scoped>
+.nuxt-link-active {
+	@apply bg-purple rounded-r-3xl text-white;
+}
+</style>
