@@ -30,6 +30,7 @@
 			</div>
 		</div>
 		<EditBoardModal v-show="showEditModal" @close-modal="showEditModal = false" />
+
 	</div>
 </template>
 
@@ -39,6 +40,7 @@ const boards = useBoard()
 const showSidebar = useSidebar()
 const route = useRoute()
 const showEditModal = ref(false)
+
 
 const boardColumns = computed(() => {
 	return boards.value.find((_b) => title(_b.name) === title(route.params.id))?.columns

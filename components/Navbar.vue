@@ -8,7 +8,7 @@
 			</a>
 			<div class="flex items-center flex-grow">
 				<span class="heading-xl" :class="{ 'ml-[81px]': showSidebar }">{{ title(route.params.id) }}</span>
-				<button class="btn btn-primary ml-auto">
+				<button class="btn btn-primary ml-auto" @click.prevent="showTaskModal = true">
 					<SvgComponent name="icon-add-task-mobile" />
 					<span class="hidden md:block">Add New Task</span>
 				</button>
@@ -16,11 +16,14 @@
 			</div>
 		</nav>
 	</header>
+	<AddTaskModal v-show="showTaskModal"  @close-modal="showTaskModal = false"/>
 </template>
 
 <script setup>
 const showSidebar = useSidebar();
 const route = useRoute()
+
+const showTaskModal = ref(false);
 </script>
 
 <style scoped></style>
