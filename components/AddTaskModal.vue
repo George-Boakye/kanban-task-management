@@ -24,7 +24,7 @@
                 <label class="block mb-[8px] text-xs dark:text-white" for="title">Status</label>
                 <select class="mb-[24px] w-[416px] h-[40px] border-[rgba(130, 143, 163, 0.25)] dark:bg-black-dark"
                     v-model="taskTemplate.status">
-                    <option v-for="column in activeBoard.columns" :value="column.name" :key="column.name">
+                    <option v-for="column in activeB.columns" :value="column.name" :key="column.name">
                         {{ column.name }}
                     </option>
                     <br />
@@ -57,9 +57,20 @@ const addSubtask = () => {
     taskTemplate.value.subtasks.push({ ...subtaskTemplate })
 }
 
-const activeBoard = boards.value.find((_b) => title(_b.name) === title(route.params.id))
+let activeB = computed(() => {
+    return []
+})
+
+
+if (route.params.id) {
+    activeB = computed(() => {
+        return boards.value.find((_b) => title(_b.name) === title(route.params.id))
+    });
+}
+
+
 const column = computed(() => {
-    return activeBoard.columns.find(_n => _n.name === taskTemplate.value.status);
+    return activeB.value.columns.find(_n => _n.name === taskTemplate.value.status);
 }
 )
 
