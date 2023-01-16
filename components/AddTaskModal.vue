@@ -17,7 +17,7 @@
                 <label class="block mb-[8px] text-xs dark:text-white" for="title">Subtasks</label>
                 <div class="mb-[12px]" v-for="(task, index) in taskTemplate.subtasks" :key="index">
                     <input class="w-[416px] h-[40px] border-[rgba(130, 143, 163, 0.25)] dark:bg-black-dark" type="text"
-                        placeholder="e.g. Make coffee" required v-model="task.title" />
+                        placeholder="e.g. Make coffee" v-model="task.title" />
                 </div>
                 <ButtonComponent class="dark:bg-white dark:text-purple" label="Add New Subtask" type="button"
                     btn-class="!block w-[416px] mb-[24px] btn-secondary" @click="addSubtask" />
@@ -53,6 +53,7 @@ const taskTemplate = ref({
     subtasks: [{ ...subtaskTemplate }],
 })
 
+
 const addSubtask = () => {
     taskTemplate.value.subtasks.push({ ...subtaskTemplate })
 }
@@ -62,20 +63,16 @@ let activeB = computed(() => {
 })
 
 
-if (route.params.id) {
-    activeB = computed(() => {
-        return boards.value.find((_b) => title(_b.name) === title(route.params.id))
-    });
-}
-
+activeB = computed(() => {
+    return boards.value.find((_b) => title(_b.name) === title(route.params.id))
+})
 
 const column = computed(() => {
-    return activeB.value.columns.find(_n => _n.name === taskTemplate.value.status);
-}
-)
+    return activeB.value.columns.find((_n) => _n.name === taskTemplate.value.status)
+})
 
 const createTask = () => {
-    column.value.tasks.push({ ...taskTemplate });
+    column.value.tasks.push({ ...taskTemplate })
     emit('close-modal', false)
 };
 </script>

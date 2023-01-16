@@ -30,6 +30,7 @@
 			</div>
 		</div>
 		<EditBoardModal v-show="showEditModal" @close-modal="showEditModal = false" />
+		<AddTaskModal v-show="showTaskModal" @close-modal="closeTaskModal" />
 
 	</div>
 </template>
@@ -38,6 +39,7 @@
 <script setup>
 const boards = useBoard()
 const showSidebar = useSidebar()
+const showTaskModal = useTaskModal()
 const route = useRoute()
 const showEditModal = ref(false)
 
@@ -48,6 +50,11 @@ const boardColumns = computed(() => {
 
 const completedSubtasks = (subtasks) => {
 	return subtasks.filter((m) => m.isCompleted).length
+}
+
+const closeTaskModal = () => {
+	const showTask = useTaskModal()
+	showTask.value = false;
 }
 </script>
 
